@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class PetitionRead extends PetitionBase{
+public class PetitionRead extends PetitionBase {
     @Schema(example = "1")
     private Long id;
 
