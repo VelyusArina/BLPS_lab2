@@ -7,12 +7,12 @@ import lombok.Data;
 
 @Data
 public class PetitionBase {
-    @Schema(example = "Результаты проверки.")
+    @Schema(example = "BLPS")
     @NotBlank
     @Size(max = 50)
     private String title;
 
-    @Schema(example = "Очень важные результаты проверки.")
+    @Schema(example = "AAAAAAA POMOGITE")
     @NotBlank
     @Size(max = 512)
     private String description;
