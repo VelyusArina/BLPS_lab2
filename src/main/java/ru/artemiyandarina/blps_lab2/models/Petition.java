@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
-import java.util.List;
 
 @Entity
 @Data
@@ -22,7 +21,7 @@ public class Petition {
     @Temporal(TemporalType.TIMESTAMP)
     private Timestamp creationDate = new Timestamp(System.currentTimeMillis());
 
-    @Column(name = "country",nullable = false)
+    @Column(name = "country", nullable = false)
     private String country;
 
     @Column(nullable = false, length = 50)
