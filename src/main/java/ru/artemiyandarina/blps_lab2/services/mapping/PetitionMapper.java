@@ -1,10 +1,11 @@
 package ru.artemiyandarina.blps_lab2.services.mapping;
 
+import org.springframework.stereotype.Service;
 import ru.artemiyandarina.blps_lab2.models.Petition;
 import ru.artemiyandarina.blps_lab2.schemas.petition.PetitionBase;
 import ru.artemiyandarina.blps_lab2.schemas.petition.PetitionCreate;
 import ru.artemiyandarina.blps_lab2.schemas.petition.PetitionRead;
-
+@Service
 public class PetitionMapper {
     private final UserMapper userMapper;
 
