@@ -21,8 +21,8 @@ public class Petition {
     @Temporal(TemporalType.TIMESTAMP)
     private Timestamp creationDate = new Timestamp(System.currentTimeMillis());
 
-    @Column(name = "country", nullable = false)
-    private String country;
+    @Enumerated(EnumType.STRING)
+    private Country country = Country.RUSSIA;
 
     @Column(nullable = false, length = 50)
     private String title;
