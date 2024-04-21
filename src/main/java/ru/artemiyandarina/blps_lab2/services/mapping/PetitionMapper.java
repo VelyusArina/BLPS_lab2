@@ -1,7 +1,7 @@
 package ru.artemiyandarina.blps_lab2.services.mapping;
 
 import org.springframework.stereotype.Service;
-import ru.artemiyandarina.blps_lab2.exceptions.WrongCountryNameException;
+import ru.artemiyandarina.blps_lab2.exceptions.UnknownCountryException;
 import ru.artemiyandarina.blps_lab2.models.Country;
 import ru.artemiyandarina.blps_lab2.models.Petition;
 import ru.artemiyandarina.blps_lab2.schemas.petition.PetitionBase;
@@ -31,9 +31,9 @@ public class PetitionMapper {
     public Petition mapPetitionCreateToEntity(PetitionCreate schema) {
         Petition newPetition = mapPetitionBaseToEntity(schema);
         try {
-            newPetition.setCountry(Country.valueOf(schema.getCountry()));
+            newPetition.setCountry(Country.valueOf(schema.getCountry().toUpperCase()));
         } catch (IllegalArgumentException e) {
-            throw new WrongCountryNameException();
+            throw new UnknownCountryException();
         }
         // todo: почему blya страна не сетится.....
         return newPetition;
