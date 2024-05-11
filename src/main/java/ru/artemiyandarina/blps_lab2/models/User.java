@@ -2,6 +2,10 @@ package ru.artemiyandarina.blps_lab2.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,18 +23,24 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @Builder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class User {
     @Id
     @GeneratedValue(strategy = IDENTITY)
+    @XmlAttribute
     private Long id;
 
     @Column(length = 30, nullable = false)
+    @XmlAttribute
     private String name;
 
     @Column(length = 30, nullable = false)
+    @XmlAttribute
     private String surname;
 
     @Column(length = 30, nullable = false, unique = true)
+    @XmlAttribute
     private String email;
 
     @Column(nullable = false)
